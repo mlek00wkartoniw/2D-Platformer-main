@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         coins += amount;
         Debug.Log("Monetki " + coins);
-        if (coins < 4)
+        if (coins > 8)
         {
             SceneManager.LoadScene("EndGame");
         }
