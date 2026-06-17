@@ -3,36 +3,43 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-
     public int health;
-    public int maxHealth = 10; 
+    public int maxHealth = 10;
 
-    public Image healthBar;
+    public Image[] healthSegments; // 5 segmentów paska ¿ycia
+
     public Transform respawnPoint;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = maxHealth;
         UpdateHealthBar();
     }
 
-    // Update is called once per frame
-public void TakeDemage(int amount)
+    public void TakeDemage(int amount)
     {
-        health -= amount; 
-        if(health <=0)
+        health -= amount;
+
+        if (health < 0)
+            health = 0;
+
+        UpdateHealthBar();
+
+        if (health <= 0)
         {
             Respawn();
         }
     }
 
-public void Heal(int amount)
+    public void Heal(int amount)
     {
         health += amount;
-    }
 
+        if (health > maxHealth)
+            health = maxHealth;
+
+        UpdateHealthBar();
+    }
 
     void Respawn()
     {
@@ -40,11 +47,14 @@ public void Heal(int amount)
         health = maxHealth;
         UpdateHealthBar();
     }
+
     void UpdateHealthBar()
     {
-        healthBar.fillAmount = (float)health/ maxHealth; 
+        int activeSegments = health / 2;
+
+        for (int i = 0; i < healthSegments.Length; i++)
+        {
+            healthSegments[i].enabled = i < activeSegments;
+        }
     }
-
-
-
 }

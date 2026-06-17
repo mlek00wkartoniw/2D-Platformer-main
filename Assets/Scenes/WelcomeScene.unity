@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 223190064}
   - component: {fileID: 223190063}
   - component: {fileID: 223190062}
+  - component: {fileID: 223190066}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948598705}
+      - m_Target: {fileID: 223190060}
         m_TargetAssemblyTypeName: SceneOpener, Assembly-CSharp
         m_MethodName: 
         m_Mode: 5
@@ -265,6 +266,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223190060}
   m_CullTransparentMesh: 1
+--- !u!114 &223190066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223190060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa20a7d5c17839847b8bd14c1493faa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &696303172
 GameObject:
   m_ObjectHideFlags: 0
